@@ -1,0 +1,21 @@
+{
+  "name": "primer_proyecto_express",
+  "version": "1.0.0",
+  "description": "proyecto de ejemplo para comenzar en node y express",
+  "main": "server,js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "didactica",
+    "express",
+    "nodejs",
+    "servidores"
+  ],
+  "author": "Nidia Ardila",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

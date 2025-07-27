@@ -10,11 +10,12 @@ export class Product {
     #visible
 
     constructor(name, description, price, stock){
+        this.#id = uuidv4()
         this.#name = name
         this.#description = description
         this.#price = price
         this.#stock = stock
-        this.#visible = visible
+        this.#visible = visible > 0
     }
 
     get id(){

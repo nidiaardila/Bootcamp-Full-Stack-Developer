@@ -1,0 +1,42 @@
+[
+    {
+        "id": "75ee39db-9537-4a56-9938-38d4588d2018",
+        "name": "Nidia",
+        "lastname": "Ardila",
+        "email": "nidia@example.com",
+        "rol": "admin",
+        "active": true
+    },
+    {
+        "id": "b46c989e-3e65-4c84-a011-6fde20c74f26",
+        "name": "Javier",
+        "lastname": "Martínez",
+        "email": "javier.martinez@example.com",
+        "rol": "guest",
+        "active": true
+    },
+    {
+        "id": "8121c529-33f9-4762-8c7a-4d4739bc0bfa",
+        "name": "María",
+        "lastname": "González",
+        "email": "maria.gonzalez@example.com",
+        "rol": "viewer",
+        "active": true
+    },
+    {
+        "id": "b46e8a69-38dc-40e8-8853-9f7068acc108",
+        "name": "Carlos",
+        "lastname": "López",
+        "email": "carlos.lopez@example.com",
+        "rol": "editor",
+        "active": true
+    },
+    {
+        "id": "a5d028e7-30db-4e93-be08-0ec47e831111",
+        "name": "Carlos",
+        "lastname": "López",
+        "email": "carlos.lopez@example.com",
+        "rol": "editor",
+        "active": true
+    }
+]

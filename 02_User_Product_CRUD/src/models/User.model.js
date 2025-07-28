@@ -90,6 +90,5 @@ export class User {
         } catch (error) {
             throw new Error(`Error al crear el usuario, Error: ${error}`)
         }
-        
     }
 }

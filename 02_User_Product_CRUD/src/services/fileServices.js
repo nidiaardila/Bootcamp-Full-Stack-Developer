@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 
 
 export const createFile = async (data, pathData) => {
+
     try {
         const dataFilePath = path.join(__dirname, `../data/${pathData}`)
 
@@ -14,16 +15,19 @@ export const createFile = async (data, pathData) => {
 
         await fs.writeFile(dataFilePath, JSON.stringify(data, null, 4), 'utf-8');
     }catch (error) {
-        throw new Error(`Error al crear o guardar el archivo: ${dataFilePath}, ${error}`)
+        const pathUsed = dataFilePath || `../data/${pathData}`;
+        throw new Error(`Error al crear o guardar el archivo: ${pathUsed}, ${error.message}`);
     }
 }
 
 
 export const readFile = async (pathData) => {
      try {
+
         const dataFilePath = path.join(__dirname, `../data/${pathData}`)
 
         const data = await fs.readFile(dataFilePath, 'utf8')
+
         return JSON.parse(data)
     } catch (error) {
         throw new Error(`Error al leer el archivo: ${dataFilePath}, ${error}`)

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { createDataFile } from '../utils/fileUtils.js';
+import { createDataFile, getAllData } from '../utils/fileUtils.js';
 
 
 export class User {
@@ -89,6 +89,15 @@ export class User {
             return userObject   
         } catch (error) {
             throw new Error(`Error al crear el usuario, Error: ${error}`)
+        }
+    }
+
+    static async findAll(){
+        try {
+            const data = await getAllData('users.json')
+            return data
+        } catch (error) {
+            throw new Error(`Error al obtener los datos del usuario`)
         }
     }
 }

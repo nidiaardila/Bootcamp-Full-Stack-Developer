@@ -23,7 +23,6 @@ export const createFile = async (data, pathData) => {
 
 export const readFile = async (pathData) => {
      try {
-
         const dataFilePath = path.join(__dirname, `../data/${pathData}`)
 
         const data = await fs.readFile(dataFilePath, 'utf8')

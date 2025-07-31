@@ -18,3 +18,23 @@ export const createUser = async (req, res) => {
         })
     }
 }  
+
+export const getAllUsers = async (req, res) => {
+    try {
+        const data = await User.findAll()
+
+        if(!data) throw new Error('No existen datos')
+
+        res.status(200).json({
+            message: 'Users found',
+            status: 200,
+            data
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting users',
+            status: 500,
+            error: error.message
+        })
+    }
+}

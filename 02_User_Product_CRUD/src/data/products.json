@@ -14,5 +14,13 @@
         "price": 179.99,
         "stock": 25,
         "visible": true
+    },
+    {
+        "id": "167bc5dc-e524-4062-99aa-38352caa84bb",
+        "name": "Notebook Lenovo ",
+        "description": "Computador gamer con tecnología Eye Saver",
+        "price": 250,
+        "stock": 17,
+        "visible": true
     }
 ]

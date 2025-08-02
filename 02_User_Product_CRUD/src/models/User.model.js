@@ -97,7 +97,7 @@ export class User {
             const data = await getAllData('users.json')
             return data
         } catch (error) {
-            throw new Error(`Error al obtener los datos del usuario`)
+            throw new Error(`Error al obtener los datos de usuarios`)
         }
     }
 }

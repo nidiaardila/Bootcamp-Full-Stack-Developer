@@ -19,3 +19,24 @@ export const createProduct = async(req, res) => {
         })
     }
 }
+
+export const getAllProducts = async (req, res) => {
+    try {
+        const data = await Product.findAll();
+
+        if(!data) throw new Error('No existen datos')
+
+        res.status(200).json({
+            message: 'Products found',
+            status: 200,
+            data
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting products',
+            status: 500,
+            error: error.message
+        })
+        
+    }
+}

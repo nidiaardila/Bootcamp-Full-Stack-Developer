@@ -38,3 +38,22 @@ export const getAllUsers = async (req, res) => {
         })
     }
 }
+
+export const getUserById = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const data = await User.findById(id);
+
+        res.status(200).json({
+            message: 'User found',
+            status: 200,
+            data
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting user by id',
+            status: 500,
+            error: error.message
+        })
+    }
+}

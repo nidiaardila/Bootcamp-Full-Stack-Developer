@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { createDataFile, getAllData } from '../utils/fileUtils.js'
+import { createDataFile, getAllData, getElementById } from '../utils/fileUtils.js'
 
 
 
@@ -85,7 +85,16 @@ export class Product {
             const data = await getAllData('products.json')
             return data
         } catch (error) {
-            throw new Error (`Error al obtener los datos de productos, Error ${error}`)
+            throw new Error (`Error al obtener los datos de los productos, Error ${error}`)
+        }
+    }
+
+    static async findById(id){
+        try {
+            const product = await getElementById(id, 'products.json')
+            return product
+        } catch (error) {
+            throw new Error (`Error al obtener los datos del el producto, Error ${error}`)
         }
     }
 }

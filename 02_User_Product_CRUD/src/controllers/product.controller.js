@@ -36,7 +36,27 @@ export const getAllProducts = async (req, res) => {
             message: 'Error getting products',
             status: 500,
             error: error.message
+        })  
+    }
+}
+
+export const getProductById = async (req, res) => {
+    try {
+        const  { id } = req.params;
+        const data = await Product.findById(id);
+
+        if(!data) throw new Error('La data se encuentra vacia')
+
+        res.status(200).json({
+            message: 'Product found',
+            status: 200,
+            data
         })
-        
+    } catch (error) {
+        res.status(500).json({
+            message: 'Error getting product by id',
+            status: 500,
+            error: error.message
+        })  
     }
 }

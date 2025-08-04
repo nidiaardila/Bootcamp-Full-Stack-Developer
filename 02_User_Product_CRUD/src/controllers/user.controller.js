@@ -44,6 +44,8 @@ export const getUserById = async (req, res) => {
         const id = req.params.id;
         const data = await User.findById(id);
 
+        if(!data) throw new Error('DLa data se encuentra vacia')
+
         res.status(200).json({
             message: 'User found',
             status: 200,

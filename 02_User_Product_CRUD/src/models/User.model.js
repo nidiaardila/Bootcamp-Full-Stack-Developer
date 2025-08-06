@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { createDataFile, getAllData, getElementById } from '../utils/fileUtils.js';
+import { createDataFile, getAllData, getElementById, updteData } from '../utils/fileUtils.js';
 
 
 export class User {
@@ -107,6 +107,15 @@ export class User {
             return data
         } catch (error) {
             throw new Error(`Error al obtener los datos de usuarios por Id`)
+        }
+    }
+
+    static async update(id, data){
+        try {
+            const updateUser = await updteData(id, data, 'users.json');
+            return updateUser
+        } catch (error) {
+            throw new Error (`Error al actualizar el usuario, Error: ${error}`);
         }
     }
 }

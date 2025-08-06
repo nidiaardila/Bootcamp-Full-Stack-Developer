@@ -35,3 +35,24 @@ export const getElementById = async(id, pathData) => {
         throw new Error ('No pudimos encontrar el dato por el id')
     }
 }
+
+export const updteData = async(id, newData, pathData) => {
+    try {
+        const data = await readFile(pathData);
+        const indexData = data.findIndex(dataFound => dataFound.id === id);
+
+        if(indexData === -1) throw new Error ('No pudimos encontrar el dato que buscas')
+
+        //Cortesia: Devolver el dato anterior para comparar la informacion
+        const oldData = {...data[indexData]}
+
+        data[indexData] = { ...newData, id, active : true}
+        await createFile(data, pathData)
+
+        //Cortesia: Devolver data vieja
+        return oldData
+
+    } catch (error) {
+        throw new Error ('No pudimos actualizar la data') 
+    }
+}

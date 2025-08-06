@@ -59,3 +59,25 @@ export const getUserById = async (req, res) => {
         })
     }
 }
+
+export const updateUser = async (req, res) => {
+    try {
+        const { id } = req.params
+        const dataUser = req.body
+
+        const updateUser = await User.update(id, dataUser)
+
+        res.status(201).json({
+            message: 'User updated',
+            status: 201,
+            oldData: updateUser,
+            newData: dataUser
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: "Error error updating user",
+            status: 500,
+            error,
+          });
+    }
+}

@@ -1,10 +1,10 @@
 [
     {
+        "name": "Paola",
+        "lastname": "Herrera",
+        "email": "nidia@test.com",
+        "rol": "Gerente general",
         "id": "75ee39db-9537-4a56-9938-38d4588d2018",
-        "name": "Nidia",
-        "lastname": "Ardila",
-        "email": "nidia@example.com",
-        "rol": "admin",
         "active": true
     },
     {

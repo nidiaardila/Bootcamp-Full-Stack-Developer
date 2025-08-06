@@ -36,7 +36,7 @@ export const getElementById = async(id, pathData) => {
     }
 }
 
-export const updteData = async(id, newData, pathData) => {
+export const updateData = async(id, newData, pathData) => {
     try {
         const data = await readFile(pathData);
         const indexData = data.findIndex(dataFound => dataFound.id === id);

@@ -60,3 +60,25 @@ export const getProductById = async (req, res) => {
         })  
     }
 }
+
+export const updateProduct = async (req, res) => {
+    try {
+        const { id } = req.params
+        const dataProduct = req.body
+
+        const updateProduct = await Product.update(id, dataProduct)
+
+        res.status(201).json({
+            message: 'Product updated',
+            status: 201,
+            oldData: updateProduct,
+            newData: dataProduct
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: "Error error updating product",
+            status: 500,
+            error,
+          });
+    }
+}

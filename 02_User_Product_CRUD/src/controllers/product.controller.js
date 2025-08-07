@@ -82,3 +82,23 @@ export const updateProduct = async (req, res) => {
           });
     }
 }
+
+export const deletePermanentlyProduct = async (req, res) => {
+    try {
+        const { id } = req.params
+
+        const deleteProduct = await Product.permanentlyDelete(id)
+
+        res.status(200).json({
+            message: `Producto con id ${id} eliminado con exito`,
+            status: 201,
+            dataDeleted: deleteProduct
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: "Error al Eliminar el producto permanentemente",
+            status: 500,
+            error,
+        });
+    }
+}

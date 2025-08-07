@@ -81,3 +81,23 @@ export const updateUser = async (req, res) => {
           });
     }
 }
+
+export const deletePermanentlyUser = async (req, res) => {
+    try {
+        const { id } = req.params
+
+        const deleteUser = await User.permanentlyDelete(id)
+
+        res.status(200).json({
+            message: `Usuario con id ${id} eliminado con exito`,
+            status: 201,
+            dataDeleted: deleteUser
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: "Error al Eliminar el usuario permanentemente",
+            status: 500,
+            error,
+        });
+    }
+}

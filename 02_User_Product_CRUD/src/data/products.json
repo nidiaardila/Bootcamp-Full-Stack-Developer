@@ -8,14 +8,6 @@
         "active": true
     },
     {
-        "id": "f5810a6b-2a9b-4f04-9edf-e78795b4e33f",
-        "name": "Nuevos Monitor Samsung 24”",
-        "description": "Monitor LED Full HD con resolución 1920x1080 y tecnología Eye Saver",
-        "price": 179.99,
-        "stock": 25,
-        "visible": true
-    },
-    {
         "id": "167bc5dc-e524-4062-99aa-38352caa84bb",
         "name": "Notebook Lenovo ",
         "description": "Computador gamer con tecnología Eye Saver",

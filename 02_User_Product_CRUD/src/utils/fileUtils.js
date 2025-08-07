@@ -56,3 +56,22 @@ export const updateData = async(id, newData, pathData) => {
         throw new Error ('No pudimos actualizar la data') 
     }
 }
+
+export const permanentlyDeleteData = async(id, pathData) => {
+    try {
+        const data = await readFile(pathData);
+
+        const indexData = data.findIndex(dataFound => dataFound.id === id);
+
+        if(indexData === -1) throw new Error ('No pudimos encontrar la data');
+
+        const dataDelete = data[indexData]
+        data.splice(indexData, 1)
+
+        await createFile(data, pathData)
+
+        return dataDelete
+    } catch (error) {
+        throw new Error ('No pudimos Eliminar la data')
+    }
+}

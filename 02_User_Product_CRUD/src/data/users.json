@@ -8,30 +8,6 @@
         "active": true
     },
     {
-        "id": "b46c989e-3e65-4c84-a011-6fde20c74f26",
-        "name": "Javier",
-        "lastname": "Martínez",
-        "email": "javier.martinez@example.com",
-        "rol": "guest",
-        "active": true
-    },
-    {
-        "id": "8121c529-33f9-4762-8c7a-4d4739bc0bfa",
-        "name": "María",
-        "lastname": "González",
-        "email": "maria.gonzalez@example.com",
-        "rol": "viewer",
-        "active": true
-    },
-    {
-        "id": "a5d028e7-30db-4e93-be08-0ec47e831111",
-        "name": "Carlos",
-        "lastname": "López",
-        "email": "carlos.lopez@example.com",
-        "rol": "editor",
-        "active": true
-    },
-    {
         "id": "8ef50a68-64ca-42cd-9da5-981c7fa2835a",
         "name": "Luis",
         "lastname": "López",
@@ -43,14 +19,6 @@
         "id": "a51c56da-fcfd-4872-981f-98b1c37c0c90",
         "name": "Teresa",
         "lastname": "López",
-        "email": "carlos.lopez@example.com",
-        "rol": "editor",
-        "active": true
-    },
-    {
-        "id": "ea07f225-92e9-43d3-a54e-052deac41251",
-        "name": "Ana",
-        "lastname": "perez",
         "email": "carlos.lopez@example.com",
         "rol": "editor",
         "active": true

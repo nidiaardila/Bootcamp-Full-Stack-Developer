@@ -30,5 +30,53 @@
         "email": "carlos.lopez@example.com",
         "rol": "editor",
         "active": true
+    },
+    {
+        "id": "90c2a47c-5a5e-4650-9b34-4284613a205b",
+        "name": "leo",
+        "lastname": "Luna",
+        "email": "carlos.lopez@example.com",
+        "rol": "Developer",
+        "active": true
+    },
+    {
+        "id": "b7a0b578-ac39-4876-bc25-d90e829fb5fa",
+        "name": "Benjamin",
+        "lastname": "Luna",
+        "email": "carloslopez@gmail.com",
+        "rol": "Scrum Master",
+        "active": true
+    },
+    {
+        "id": "af58a66b-9bea-448c-87f4-de50c109a5db",
+        "name": "Noelia",
+        "lastname": "Luna",
+        "email": "carloslopez@gmail.com",
+        "rol": "Developer",
+        "active": true
+    },
+    {
+        "id": "9766bf24-4ba4-4570-b357-3461bea9af12",
+        "name": "Noea",
+        "lastname": "Luna",
+        "email": "carloslopez@gmail.com",
+        "rol": "Developer",
+        "active": true
+    },
+    {
+        "id": "49fb1c33-4df9-4838-be9e-9661b47bb70e",
+        "name": "Noea",
+        "lastname": "Luna",
+        "email": "carloslopez@gmail.com",
+        "rol": "Developer",
+        "active": true
+    },
+    {
+        "id": "b5a5e810-ab8c-444a-b126-3487228e2ceb",
+        "name": "Margarita",
+        "lastname": "Luna",
+        "email": "carloslopez@gmail.com",
+        "rol": "Developer",
+        "active": true
     }
 ]

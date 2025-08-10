@@ -1,5 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
-import { createDataFile, getAllData, getElementById, permanentlyDeleteData, updateData } from '../utils/fileUtils.js';
+import { 
+    createDataFile, 
+    getAllData, 
+    getElementById, 
+    permanentlyDeleteData, 
+    updateData 
+} from '../utils/fileUtils.js';
+
+import { Validate } from "../utils/validaciones.js";
+import { VALID_ROLES } from '../utils/constantes/validRoles.js';
 
 
 export class User {
@@ -7,17 +16,19 @@ export class User {
     #name
     #lastname
     #email
-    #active
     #rol
+    #active
+    
 
     constructor (name, lastname, email, rol) {
         this.#id = uuidv4()
-        this.#name = name
-        this.#lastname = lastname
-        this.#email = email
-        this.#active = true
-        this.#rol = rol
+        this.#name = Validate.userName(name, 'Nombre'); 
+        this.#lastname = Validate.userName(lastname, 'Apellido');
+        this.#email = Validate.email(email);
+        this.#rol = Validate.rol(rol, VALID_ROLES);
+        this.#active = true;
     }
+
 
     get id(){
         return this.#id
@@ -48,19 +59,39 @@ export class User {
     }
 
     setName(newName){
-        this.#name = newName
+         try {
+             Validate.userName(newName, 'Nombre');
+             this.#name = newName
+         } catch (error) {
+              console.error(error)
+         }
     }
 
     setLastname(newLastname){
-        this.#lastname = newLastname
+        try {
+            Validate.userName(newLastname, 'Apellido');
+            this.#lastname = newLastname
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     setEmail(newEmail){
-        this.#email = newEmail
+        try {
+            Validate.email(email)
+            this.#email = newEmail
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     setRol(newRol){
-        this.#rol = newRol
+        try {
+            Validate.rol(newRol, VALID_ROLES)
+            this.#rol = newRol
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     setActive (){

@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { createDataFile, getAllData, getElementById, permanentlyDeleteData, updateData } from '../utils/fileUtils.js'
+import { Validate } from '../utils/validaciones.js';
 
 
 
@@ -13,10 +14,10 @@ export class Product {
 
     constructor(name, description, price, stock){
         this.#id = uuidv4()
-        this.#name = name
-        this.#description = description
-        this.#price = price
-        this.#stock = stock
+        this.#name = Validate.userName(name, 'Nombre')
+        this.#description = Validate.userName(description, 'Descripcion')
+        this.#price = Validate.amount(price, 'Precio');
+        this.#stock =Validate.amount(stock, 'Stock');
         this.#visible = stock > 0
     }
 
@@ -40,20 +41,40 @@ export class Product {
         return this.#stock
     }
 
-    setName(newName){
-        this.#name = newName
+    setName(newName) {
+        try {
+            Validate.userName(newName, "Nombre");
+            this.#name = newName;
+        } catch (error) {
+            console.error(error);
+        }
     }
 
-    setDescription(newDescription){
-        this.#description = newDescription
+    setDescription(newDescription) {
+        try {
+            Validate.userName(newDescription, "Descripción");
+            this.#name = newName;
+        } catch (error) {
+            console.error(error);
+        }
     }
 
-    setPrice(newPrice){
-        this.#price = newPrice
+    setPrice(newPrice) {
+        try {
+            Validate.amount(newPrice, "Precio");
+            this.#price = newPrice;
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     setStock(newStock){
-        this.#stock = newStock
+        try {
+            Validate.amount(newStock, 'Stock');
+            this.#stock = newStock;
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     getAllProperties(){

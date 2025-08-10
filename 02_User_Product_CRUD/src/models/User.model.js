@@ -59,12 +59,12 @@ export class User {
     }
 
     setName(newName){
-         try {
-             Validate.userName(newName, 'Nombre');
-             this.#name = newName
-         } catch (error) {
-              console.error(error)
-         }
+        try {
+            Validate.userName(newName, 'Nombre');
+            this.#name = newName
+        } catch (error) {
+            console.error(error)
+            }
     }
 
     setLastname(newLastname){

@@ -14,5 +14,13 @@
         "price": 250,
         "stock": 17,
         "visible": true
+    },
+    {
+        "id": "444460b4-da4f-48d2-8240-27dd71a07cb9",
+        "name": "NotebookMac",
+        "description": "Computador gamer con tecnología Eye Saver",
+        "price": 250,
+        "stock": 17,
+        "visible": true
     }
 ]

@@ -16,11 +16,11 @@
         "visible": true
     },
     {
-        "id": "444460b4-da4f-48d2-8240-27dd71a07cb9",
-        "name": "NotebookMac",
+        "id": "c674e115-eb50-408a-b2e9-2ce6e1b14061",
+        "name": "Monitor LCD",
         "description": "Computador gamer con tecnología Eye Saver",
-        "price": 250,
-        "stock": 17,
+        "price": 312,
+        "stock": 170,
         "visible": true
     }
 ]

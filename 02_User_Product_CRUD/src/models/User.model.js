@@ -9,6 +9,7 @@ import {
 
 import { Validate } from "../utils/validaciones.js";
 import { VALID_ROLES } from '../utils/constantes/validRoles.js';
+import { InternalServerError, ValidationError } from '../error/typesError.js';
 
 
 export class User {
@@ -63,7 +64,8 @@ export class User {
             Validate.userName(newName, 'Nombre');
             this.#name = newName
         } catch (error) {
-            console.error(error)
+            // console.error(error)
+            throw new ValidationError('Error al modificar el campo name',error)
             }
     }
 
@@ -72,7 +74,8 @@ export class User {
             Validate.userName(newLastname, 'Apellido');
             this.#lastname = newLastname
         } catch (error) {
-            console.error(error)
+            // console.error(error)
+            throw new ValidationError('Error al modificar el campo no lastname',error)
         }
     }
 
@@ -81,7 +84,8 @@ export class User {
             Validate.email(email)
             this.#email = newEmail
         } catch (error) {
-            console.error(error)
+            // console.error(error)
+            throw new ValidationError('Error al modificar el campo email',error);
         }
     }
 
@@ -90,7 +94,8 @@ export class User {
             Validate.rol(newRol, VALID_ROLES)
             this.#rol = newRol
         } catch (error) {
-            console.error(error);
+            // console.error(error);
+            throw new ValidationError('Error al modificar el campo rol',error);
         }
     }
 
@@ -119,7 +124,8 @@ export class User {
 
             return userObject   
         } catch (error) {
-            throw new Error(`Error al crear el usuario, Error: ${error}`)
+            // throw new Error(`Error al crear el usuario, Error: ${error}`),
+            throw new InternalServerError(`Error al crear el usuario, Error:`, error)
         }
     }
 
@@ -128,7 +134,9 @@ export class User {
             const data = await getAllData('users.json')
             return data
         } catch (error) {
-            throw new Error(`Error al obtener los datos de usuarios`)
+            // throw new Error(`Error al obtener los datos de usuarios`)
+            throw new InternalServerError(`Error al obtener los datos de usuarios`, error)
+
         }
     }
 
@@ -137,7 +145,9 @@ export class User {
             const data = await getElementById(id, 'users.json')
             return data
         } catch (error) {
-            throw new Error(`Error al obtener los datos de usuarios por Id`)
+            // throw new Error(`Error al obtener los datos de usuarios por Id`)
+            throw new InternalServerError(`Error al obtener los datos de usuarios por Id`, error)
+
         }
     }
 
@@ -146,7 +156,9 @@ export class User {
             const updateUser = await updateData(id, data, 'users.json');
             return updateUser
         } catch (error) {
-            throw new Error (`Error al actualizar el usuario, Error: ${error}`);
+            // throw new Error (`Error al actualizar el usuario, Error: ${error}`);
+            throw new InternalServerError (`Error al actualizar el usuario, Error:`, error);
+
         }
     }
 
@@ -155,7 +167,8 @@ export class User {
             const deleteUser = await permanentlyDeleteData(id, 'users.json');
             return deleteUser 
         } catch (error) {
-            throw new Error (`Fallo al eliminar permanente el usuario, Error: ${error}`);
+            // throw new Error (`Fallo al eliminar permanente el usuario, Error: ${error}`);
+            throw new InternalServerError (`Fallo al eliminar permanente el usuario, Error:`, error);
         }
     }
 }

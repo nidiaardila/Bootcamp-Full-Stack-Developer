@@ -64,16 +64,24 @@
         "active": true
     },
     {
-        "id": "49fb1c33-4df9-4838-be9e-9661b47bb70e",
-        "name": "Noea",
+        "id": "b5a5e810-ab8c-444a-b126-3487228e2ceb",
+        "name": "Margarita",
         "lastname": "Luna",
         "email": "carloslopez@gmail.com",
         "rol": "Developer",
         "active": true
     },
     {
-        "id": "b5a5e810-ab8c-444a-b126-3487228e2ceb",
-        "name": "Margarita",
+        "id": "274ffb0f-be84-4cc1-a13a-8db906841578",
+        "name": "lUZ",
+        "lastname": "Luna",
+        "email": "carloslopez@gmail.com",
+        "rol": "Developer",
+        "active": true
+    },
+    {
+        "id": "3a345c47-4f5a-4efd-8e9b-f51a5407c9c9",
+        "name": "Alfonso",
         "lastname": "Luna",
         "email": "carloslopez@gmail.com",
         "rol": "Developer",

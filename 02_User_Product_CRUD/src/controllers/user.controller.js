@@ -1,6 +1,7 @@
+import { NotFoundError } from '../error/typesError.js';
 import { User } from '../models/User.model.js'
 
-export const createUser = async (req, res) => {
+export const createUser = async (req, res, next) => {
     try {
         const data =  req.body;
         const user = await User.createUser(data)
@@ -11,11 +12,12 @@ export const createUser = async (req, res) => {
         })
 
     } catch (error) {
-        res.status(500).json({
-            message: 'Error creating user',
-            status: 500,
-            error: error.message
-        })
+        // res.status(500).json({
+        //     message: 'Error creating user',
+        //     status: 500,
+        //     error: error.message
+        // })
+        next(error)
     }
 }  
 
@@ -23,7 +25,8 @@ export const getAllUsers = async (req, res) => {
     try {
         const data = await User.findAll()
 
-        if(!data) throw new Error('No existen datos')
+        // if(!data) throw new Error('No existen datos')
+        if (!data) throw new NotFoundError("La data se encuentra vacía", `No encontramos el id: ${id}`);
 
         res.status(200).json({
             message: 'Users found',
@@ -44,7 +47,8 @@ export const getUserById = async (req, res) => {
         const id = req.params.id;
         const data = await User.findById(id);
 
-        if(!data) throw new Error('DLa data se encuentra vacia')
+        // if(!data) throw new Error('La data se encuentra vacia')
+        if (!data) throw new NotFoundError("La data se encuentra vacía", `No encontramos el id: ${id}`);
 
         res.status(200).json({
             message: 'User found',

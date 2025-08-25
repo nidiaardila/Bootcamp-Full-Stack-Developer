@@ -1,0 +1,17 @@
+{
+  "name": "03_jest-pruebas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "function.js",
+  "type": "module",
+
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^11.7.1"
+  }
+}
